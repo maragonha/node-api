@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test-integration && npm run test-unit && npm run test-contract",
     "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js",
-    "test-unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/controllers/*.js"
+    "test-unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/controllers/*.js",
+    "test-contract": "NODE_ENV=test mocha --opts test/contracts/mocha.opts test/contracts/contracts/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,13 +18,17 @@
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "sequelize": "^4.32.6",
+    "joi": "^13.1.2",
+    "joi-assert": "0.0.3",
+    "sequelize": "^4.33.4",
     "sqlite3": "^3.1.13",
-    "testdouble": "^3.3.3"
+    "testdouble": "^3.5.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "chai": "^4.1.2",
-    "mocha": "^5.0.0",
+    "mocha": "^5.0.1",
     "supertest": "^3.0.0"
   }
 }
