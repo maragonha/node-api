@@ -6,7 +6,8 @@
   "scripts": {
     "start": "babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test-integration": "mocha --opts test/integration/mocha.opts test/integration/*.js"
+    "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js",
+    "test-unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/controllers/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +18,8 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "sequelize": "^4.32.6",
-    "sqlite3": "^3.1.13"
+    "sqlite3": "^3.1.13",
+    "testdouble": "^3.3.3"
   },
   "devDependencies": {
     "chai": "^4.1.2",
