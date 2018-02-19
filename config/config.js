@@ -8,5 +8,7 @@ export default {
     define: {
       underscored: true
     }
-  }
+  },
+  jwtSecret: 'Magnaguagno',
+  jwtSession: { session: false }
 }
